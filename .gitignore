@@ -1,0 +1,16 @@
+# Ignore pywal and cache
+.cache/
+wal/
+__pycache__/
+
+# Editor stuff
+*.swp
+.vscode/
+.idea/
+
+# Screenshots and temp files
+.config/wallset-engine/screenshots/
+
+# Logs and backups
+*.log
+*.bak

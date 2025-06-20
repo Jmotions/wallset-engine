@@ -19,7 +19,8 @@ A user-friendly UI wrapper for **linux-wallpaperengine** that makes managing Wal
 - `fzf` - Fuzzy finder for wallpaper selection
 - `pywal` (or `wal`) - Color scheme generation
 - `linux-wallpaperengine` - Wallpaper Engine runtime for Linux
-
+### (not so) Required Dependencies
+- `Kitty` - It works very well with the image feature
 ### Steam Setup
 - Steam installed (native or Flatpak)
 - Wallpaper Engine purchased and installed

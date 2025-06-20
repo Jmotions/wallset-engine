@@ -224,4 +224,4 @@ If you encounter issues or have questions:
 
 ---
 
-**Made with love for the Linux desktop community**
+**Made with love for the Linux desktop community (with help from waves i learned a lot making this project using that along with chatgpt at first)**

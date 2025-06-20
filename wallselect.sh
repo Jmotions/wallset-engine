@@ -135,8 +135,43 @@ for ID_DIR in "$WORKSHOP_DIR"/*/; do
   echo "$ID  $TITLE" >> "$ID_LIST"
 done
 
-# Step 2: Select wallpaper
-CHOICE=$(cat "$ID_LIST" | fzf --prompt="Select wallpaper: ")
+# Function to display preview in kitty
+show_preview() {
+  local wallpaper_id="$1"
+  local wallpaper_dir="$WORKSHOP_DIR/$wallpaper_id"
+  
+  if preview_image=$(find_preview_image "$wallpaper_dir"); then
+    # Use kitty's icat to display the image
+    kitty +kitten icat --clear --transfer-mode=memory --place=40x20@0x0 "$preview_image" 2>/dev/null
+    echo "Preview: $(basename "$preview_image")"
+  else
+    echo "No preview available for wallpaper ID: $wallpaper_id"
+  fi
+}
+
+# Step 2: Select wallpaper with preview
+if [[ "$TERM" == "xterm-kitty" ]]; then
+  # Export function and variables for fzf preview
+  export -f find_preview_image
+  export WORKSHOP_DIR
+  
+  # Use fzf with kitty image preview
+  CHOICE=$(cat "$ID_LIST" | fzf --prompt="Select wallpaper: " \
+    --preview='wallpaper_id={1}; wallpaper_dir="$WORKSHOP_DIR/$wallpaper_id"; if preview_image=$(find_preview_image "$wallpaper_dir"); then echo "Preview: $(basename "$preview_image")"; echo ""; kitty icat --clear --transfer-mode=stream --unicode-placeholder --stdin=no --place=35x25@0x0 "$preview_image" 2>/dev/null || echo "Failed to display image"; else echo "No preview available for wallpaper ID: $wallpaper_id"; fi' \
+    --preview-window=right:50%:wrap)
+elif command -v chafa >/dev/null; then
+  # Export function and variables for fzf preview
+  export -f find_preview_image
+  export WORKSHOP_DIR
+  
+  # Use fzf with chafa image preview (fallback for non-kitty terminals)
+  CHOICE=$(cat "$ID_LIST" | fzf --prompt="Select wallpaper: " \
+    --preview='wallpaper_id={1}; wallpaper_dir="$WORKSHOP_DIR/$wallpaper_id"; if preview_image=$(find_preview_image "$wallpaper_dir"); then echo "Preview: $(basename "$preview_image")"; echo ""; chafa --scale=max --animate=off --format=symbols "$preview_image" 2>/dev/null || echo "Failed to display image"; else echo "No preview available for wallpaper ID: $wallpaper_id"; fi' \
+    --preview-window=right:50%:wrap)
+else
+  # Fallback to regular fzf for terminals without image preview support
+  CHOICE=$(cat "$ID_LIST" | fzf --prompt="Select wallpaper: ")
+fi
 [[ -z "$CHOICE" ]] && echo "No wallpaper selected. Exiting." && exit 1
 WALLPAPER_ID=$(awk '{print $1}' <<< "$CHOICE")
 WALLPAPER_DIR="$WORKSHOP_DIR/$WALLPAPER_ID"

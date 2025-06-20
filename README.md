@@ -20,6 +20,9 @@ A user-friendly UI wrapper for **linux-wallpaperengine** that makes managing Wal
 - `pywal` (or `wal`) - Color scheme generation
 - `linux-wallpaperengine` - Wallpaper Engine runtime for Linux
 
+### Optional Dependencies
+- `chafa` - Terminal image preview (enables wallpaper previews in selection menu)
+
 ### Steam Setup
 - Steam installed (native or Flatpak)
 - Wallpaper Engine purchased and installed
@@ -29,7 +32,7 @@ A user-friendly UI wrapper for **linux-wallpaperengine** that makes managing Wal
 
 **Arch Linux:**
 ```bash
-sudo pacman -S jq fzf python-pywal
+sudo pacman -S jq fzf python-pywal chafa
 yay -S linux-wallpaperengine  # or your preferred AUR helper
 ```
 

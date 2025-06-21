@@ -33,7 +33,7 @@ A user-friendly UI wrapper for **linux-wallpaperengine** that makes managing Wal
 **Arch Linux:**
 ```bash
 sudo pacman -S jq fzf python-pywal
-yay -S linux-wallpaperengine  # or your preferred AUR helper
+yay -S linux-wallpaperengine-git  # or your preferred AUR helper
 ```
 
 **Ubuntu/Debian:**
@@ -116,7 +116,7 @@ After installation, wallset-engine creates the following structure:
     ├── 123456789.png
     └── 987654321.png
 ```
-(thats where it stores things that arent in the actuall git clone folder. Feel free to move everything into the .config folder after install)
+(thats where it stores things that arent in the actual git clone folder. Feel free to move everything into the .config folder after install)
 
 ## Configuration
 
@@ -183,7 +183,7 @@ exec --no-startup-id ~/.config/wallset-engine/wallpaper_startup.sh
   ```bash
   linux-wallpaperengine --bg WALLPAPER_ID
   ```
-
+(please note not all wallpapers will work properly. Check out `linux-wallpaperengine` and their github page to report issues.)
 ## Contributing
 
 Contributions are welcome! Please feel free to:

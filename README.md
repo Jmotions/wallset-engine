@@ -62,15 +62,9 @@ pip install pywal
    ```bash
    ./install.sh
    ```
-   
-   The installer will:
-   - Copy `wallselect` to `~/.local/bin/`
-   - Make it executable
-   - Optionally add `~/.local/bin` to your PATH
-
-3. **Restart your terminal** or run:
-   ```bash
-   source ~/.bashrc  # or ~/.zshrc for zsh users
+3. **Run the script!!**
+      ```bash
+   ./wallselect.sh
    ```
 
 ## Usage

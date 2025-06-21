@@ -116,6 +116,7 @@ After installation, wallset-engine creates the following structure:
     ├── 123456789.png
     └── 987654321.png
 ```
+(thats where it stores things that arent in the actuall git clone folder. Feel free to move everything into the .config folder after install)
 
 ## Configuration
 

@@ -76,13 +76,13 @@ pip install pywal
 ## Usage
 
 ### Basic Usage
-Simply run the command and follow the interactive prompts:
+Simply run the script and follow the interactive prompts:
 ```bash
-wallselect
+./wallselect
 ```
 
 ### What It Does
-1. **Scans** your Steam Workshop directory for Wallpaper Engine content
+1. **Scans** your Steam Workshop directory for Wallpaper Engine content 
 2. **Displays** an interactive list of available wallpapers with titles
 3. **Prompts** for audio preference
 4. **Detects** your monitors automatically
@@ -92,7 +92,7 @@ wallselect
 
 ### Example Session
 ```
-$ wallselect
+$ ./wallselect
 Detected monitors: DP-3 HDMI-A-1
 Select wallpaper: 
 > 123456789  Cyberpunk City Rain

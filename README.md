@@ -2,11 +2,9 @@
 
 A user-friendly UI wrapper for **linux-wallpaperengine** that makes managing Wallpaper Engine content on Linux simple and accessible. Browse your Steam Workshop wallpapers with an interactive fuzzy finder, automatically apply them across multiple monitors, and generate matching color schemes with **pywal** integration.
 
-**Perfect for users transitioning from Windows who want to keep using their Wallpaper Engine collection without dealing with complex command-line syntax.**
-
 ## Features
 
-- **Interactive Selection**: Browse your Wallpaper Engine collection with fuzzy search
+- **Interactive Selection**: Browse your Wallpaper Engine collection with **fzf**
 - **Multi-Monitor Support**: Automatic detection for Hyprland, X11, and Wayland
 - **Pywal Integration**: Automatic color scheme generation from wallpaper images
 - **Audio Control**: Choose whether to enable wallpaper audio
@@ -180,17 +178,6 @@ exec --no-startup-id ~/.config/wallset-engine/wallpaper_startup.sh
   # or for Flatpak:
   ls ~/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/workshop/content/431960
   ```
-
-### "Command not found: wallselect"
-- Ensure `~/.local/bin` is in your PATH:
-  ```bash
-  echo $PATH | grep -o ~/.local/bin
-  ```
-- If not, add it to your shell config:
-  ```bash
-  echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
-  ```
-
 ### "Monitor detection failed"
 - The script will fall back to common monitor names
 - You can manually edit the `MONITORS` array in the startup script if needed
@@ -212,7 +199,7 @@ Contributions are welcome! Please feel free to:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 

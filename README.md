@@ -1,6 +1,6 @@
 # Wallset Engine
 
-A user-friendly UI wrapper for **linux-wallpaperengine** that makes managing Wallpaper Engine content on Linux simple and accessible. Browse your Steam Workshop wallpapers with an interactive fuzzy finder, automatically apply them across multiple monitors, and generate matching color schemes with **pywal** integration.
+A user-friendly TUI for **linux-wallpaperengine** that makes managing Wallpaper Engine content on Linux simple and accessible. Browse your Steam Workshop wallpapers with an interactive fuzzy finder, automatically apply them across multiple monitors, and generate matching color schemes with **pywal** integration.
 
 ## Features
 

@@ -54,7 +54,7 @@ pip install pywal
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/wallset-engine.git
+   git clone https://github.com/Jmotions/wallset-engine.git
    cd wallset-engine
    ```
 
